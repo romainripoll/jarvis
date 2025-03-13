@@ -1,0 +1,220 @@
+/* Styles globaux */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+}
+
+/* Structure principale */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.content-area {
+  flex: 1;
+  padding: 20px;
+  max-width: calc(100% - 500px);
+}
+
+/* Animation pour les transitions */
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+/* Composants communs */
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background-color: #4a6cf7;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #3a5ce5;
+}
+
+.btn-secondary {
+  background-color: #f2f4f7;
+  color: #333;
+}
+
+.btn-secondary:hover {
+  background-color: #e5e7ea;
+}
+
+/* Styles de formulaire */
+input, textarea, select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #4a6cf7;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+/* Styles spécifiques pour l'assistant */
+.assistant-panel {
+  width: 350px;
+  background-color: #fff;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.assistant-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.assistant-icon {
+  width: 50px;
+  height: 50px;
+  background-color: #4a6cf7;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+}
+
+.assistant-icon svg {
+  color: white;
+  font-size: 24px;
+}
+
+.assistant-name {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.assistant-status {
+  font-size: 14px;
+  color: #66bb6a;
+}
+
+.chat-container {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+}
+
+.message {
+  margin-bottom: 15px;
+  max-width: 80%;
+  padding: 10px 15px;
+  border-radius: 18px;
+}
+
+.user-message {
+  align-self: flex-end;
+  background-color: #4a6cf7;
+  color: white;
+  border-bottom-right-radius: 5px;
+}
+
+.assistant-message {
+  align-self: flex-start;
+  background-color: #f2f4f7;
+  border-bottom-left-radius: 5px;
+}
+
+.voice-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.mic-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #4a6cf7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 4px 10px rgba(74, 108, 247, 0.3);
+  transition: all 0.3s;
+}
+
+.mic-button:hover {
+  background-color: #3a5ce5;
+  transform: scale(1.05);
+}
+
+.mic-button svg {
+  color: white;
+  font-size: 24px;
+}
+
+.mic-recording {
+  animation: pulse 1.5s infinite;
+  background-color: #f44336;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(244, 67, 54, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(244, 67, 54, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(244, 67, 54, 0);
+  }
+}
